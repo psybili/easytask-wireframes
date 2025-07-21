@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EasyTask - Employee Management Wireframe</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .wireframe-card {
+            border: 2px dashed #d1d5db;
+            background-color: #f9fafb;
+        }
+        .wireframe-button {
+            border: 2px solid #9ca3af;
+            background-color: #f3f4f6;
+            color: #374151;
+        }
+        .wireframe-button:hover {
+            background-color: #e5e7eb;
+        }
+        .wireframe-input {
+            border: 2px dashed #d1d5db;
+            background-color: white;
+            padding: 0.5rem;
+            border-radius: 0.375rem;
+            width: 100%;
+        }
+        .status-active {
+            background-color: #dcfce7; /* green-100 */
+            color: #166534; /* green-800 */
+        }
+        .status-inactive {
+            background-color: #f3f4f6; /* gray-200 */
+            color: #4b5563; /* gray-600 */
+        }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+    <!-- Main Application Layout -->
+    <div class="flex h-screen bg-gray-200">
+        <!-- Sidebar Navigation -->
+        <div class="w-64 bg-white shadow-md hidden md:block">
+            <div class="p-6">
+                <h1 class="text-2xl font-bold text-gray-700">EasyTask</h1>
+                <span class="text-sm text-gray-500">Manager Portal</span>
+            </div>
+            <nav class="mt-6">
+                <a href="#" class="flex items-center px-6 py-3 text-gray-600 hover:bg-gray-100">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M3 14h18m-9-4v8m-7 0h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>
+                    <span class="mx-3">Schedule</span>
+                </a>
+                <a href="#" class="flex items-center px-6 py-3 bg-gray-200 text-gray-800 font-semibold">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M15 21a6 6 0 00-9-5.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-3-5.197m0 0A5.995 5.995 0 006 7.25a5.995 5.995 0 00-3 5.197M12 4.354a4 4 0 110 5.292M3 21a6 6 0 0112 0v1z"></path></svg>
+                    <span class="mx-3">Employees</span>
+                </a>
+                <a href="#" class="flex items-center px-6 py-3 text-gray-600 hover:bg-gray-100">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                    <span class="mx-3">Settings</span>
+                </a>
+            </nav>
+        </div>
+
+        <!-- Main Content -->
+        <div class="flex-1 flex flex-col overflow-hidden">
+            <header class="flex justify-between items-center p-4 bg-white border-b-2 border-gray-300">
+                <h2 class="text-xl font-semibold">Employee Management</h2>
+                <div class="flex items-center space-x-4">
+                    <span class="text-gray-600">REWE Markt 123</span>
+                    <div class="w-10 h-10 bg-gray-300 rounded-full flex items-center justify-center text-gray-600 font-bold">KM</div>
+                </div>
+            </header>
+
+            <!-- Content Area -->
+            <main class="flex-1 overflow-x-hidden overflow-y-auto bg-gray-100 p-4 md:p-6">
+                <div class="wireframe-card rounded-lg p-4">
+                    <div class="flex flex-col md:flex-row justify-between items-center mb-4 gap-4">
+                        <div class="wireframe-input w-full md:w-1/3" placeholder="Search employees..."></div>
+                        <button class="wireframe-button w-full md:w-auto px-4 py-2 rounded-md text-sm" onclick="openModal('add')">+ Add New Employee</button>
+                    </div>
+
+                    <!-- Employee List -->
+                    <div class="space-y-3">
+                        <!-- Employee Item -->
+                        <div class="bg-white p-3 rounded-lg border-2 border-dashed flex flex-col md:flex-row items-center justify-between gap-4 cursor-pointer hover:border-blue-500" onclick="openModal('edit', 'Anna Schmidt')">
+                            <div class="flex items-center gap-4">
+                                <div class="w-12 h-12 bg-gray-300 rounded-full flex items-center justify-center font-bold text-gray-600">AS</div>
+                                <div>
+                                    <p class="font-bold">Anna Schmidt</p>
+                                    <p class="text-sm text-gray-600">Kasse, Molkerei</p>
+                                </div>
+                            </div>
+                            <div class="text-sm text-gray-600">
+                                <p><span class="font-medium">Contract:</span> 40h / week</p>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <span class="px-2 py-1 text-xs font-medium rounded-full status-active">Active</span>
+                                <span>&gt;</span>
+                            </div>
+                        </div>
+                         <!-- Employee Item -->
+                        <div class="bg-white p-3 rounded-lg border-2 border-dashed flex flex-col md:flex-row items-center justify-between gap-4 cursor-pointer hover:border-blue-500" onclick="openModal('edit', 'Max Mustermann')">
+                            <div class="flex items-center gap-4">
+                                <div class="w-12 h-12 bg-gray-300 rounded-full flex items-center justify-center font-bold text-gray-600">MM</div>
+                                <div>
+                                    <p class="font-bold">Max Mustermann</p>
+                                    <p class="text-sm text-gray-600">Lager</p>
+                                </div>
+                            </div>
+                            <div class="text-sm text-gray-600">
+                                <p><span class="font-medium">Contract:</span> 25h / week</p>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <span class="px-2 py-1 text-xs font-medium rounded-full status-active">Active</span>
+                                <span>&gt;</span>
+                            </div>
+                        </div>
+                         <!-- Employee Item -->
+                        <div class="bg-white p-3 rounded-lg border-2 border-dashed flex flex-col md:flex-row items-center justify-between gap-4 cursor-pointer hover:border-blue-500" onclick="openModal('edit', 'Julia Weber')">
+                            <div class="flex items-center gap-4">
+                                <div class="w-12 h-12 bg-gray-300 rounded-full flex items-center justify-center font-bold text-gray-600">JW</div>
+                                <div>
+                                    <p class="font-bold">Julia Weber</p>
+                                    <p class="text-sm text-gray-600">Kasse</p>
+                                </div>
+                            </div>
+                            <div class="text-sm text-gray-600">
+                                <p><span class="font-medium">Contract:</span> 15h / week</p>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <span class="px-2 py-1 text-xs font-medium rounded-full status-inactive">Inactive</span>
+                                <span>&gt;</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <!-- Add/Edit Employee Modal -->
+    <div id="employeeModal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden items-center justify-center p-4">
+        <div class="bg-white rounded-lg shadow-2xl w-full max-w-2xl transform transition-all" id="modalContent">
+            <div class="p-6 border-b border-gray-200">
+                <div class="flex justify-between items-center">
+                    <h3 id="modalTitle" class="text-xl font-semibold text-gray-800">Add New Employee</h3>
+                    <button onclick="closeModal()" class="text-gray-400 hover:text-red-500">&times;</button>
+                </div>
+            </div>
+            
+            <div class="p-6 max-h-[70vh] overflow-y-auto">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <!-- Left Column -->
+                    <div class="space-y-4">
+                        <div>
+                            <label class="font-medium text-sm">Full Name</label>
+                            <div id="employeeName" class="wireframe-input"></div>
+                        </div>
+                        <div>
+                            <label class="font-medium text-sm">Email Address</label>
+                            <div class="wireframe-input"></div>
+                        </div>
+                        <div>
+                            <label class="font-medium text-sm">Contracted Hours (per week)</label>
+                            <div class="wireframe-input"></div>
+                        </div>
+                        <div>
+                            <label class="font-medium text-sm">Flexibility Margin (+/- hours)</label>
+                            <div class="wireframe-input"></div>
+                        </div>
+                        <div>
+                            <label class="font-medium text-sm">Status</label>
+                            <div class="wireframe-input">Active</div>
+                        </div>
+                    </div>
+                    <!-- Right Column -->
+                    <div class="space-y-4">
+                        <div>
+                            <label class="font-medium text-sm">Assigned Roles</label>
+                            <div class="wireframe-card p-3 mt-1 space-y-2">
+                                <label class="flex items-center"><div class="wireframe-input w-5 h-5 mr-2"></div><span>Kasse (Cashier)</span></label>
+                                <label class="flex items-center"><div class="wireframe-input w-5 h-5 mr-2"></div><span>Lager (Warehouse)</span></label>
+                                <label class="flex items-center"><div class="wireframe-input w-5 h-5 mr-2"></div><span>Molkerei (Dairy)</span></label>
+                            </div>
+                        </div>
+                        <div>
+                            <label class="font-medium text-sm">Work Restrictions</label>
+                             <div class="wireframe-input h-24" contenteditable="true"></div>
+                             <p class="text-xs text-gray-500 mt-1">e.g., "Cannot work before 12:00", "Only one weekend per month"</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="p-6 bg-gray-50 rounded-b-lg flex justify-between items-center">
+                <button class="wireframe-button px-4 py-2 rounded-md text-sm text-red-600 border-red-400 hover:bg-red-100">Deactivate Employee</button>
+                <div>
+                    <button onclick="closeModal()" class="wireframe-button px-6 py-2 rounded-md text-sm">Cancel</button>
+                    <button onclick="closeModal()" class="wireframe-button px-6 py-2 rounded-md text-sm bg-blue-500 text-white border-blue-600 hover:bg-blue-600">Save Changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const modal = document.getElementById('employeeModal');
+        const modalContent = document.getElementById('modalContent');
+        const modalTitle = document.getElementById('modalTitle');
+        const employeeName = document.getElementById('employeeName');
+
+        function openModal(mode, name = '') {
+            if (mode === 'add') {
+                modalTitle.textContent = 'Add New Employee';
+                employeeName.textContent = '';
+            } else {
+                modalTitle.textContent = `Edit Employee: ${name}`;
+                employeeName.textContent = name;
+            }
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            modalContent.classList.add('scale-95', 'opacity-0');
+            setTimeout(() => modalContent.classList.remove('scale-95', 'opacity-0'), 50);
+        }
+
+        function closeModal() {
+            modalContent.classList.add('scale-95', 'opacity-0');
+            setTimeout(() => {
+                modal.classList.add('hidden');
+                modal.classList.remove('flex');
+            }, 200);
+        }
+
+        modal.addEventListener('click', (event) => event.target === modal && closeModal());
+        document.addEventListener('keydown', (event) => event.key === 'Escape' && closeModal());
+    </script>
+</body>
+</html>
